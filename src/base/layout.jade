@@ -1,0 +1,25 @@
+doctype html
+html(lang="en")
+  head
+    meta(charset="UTF-8")
+    meta(name="viewport", content="width=device-width, initial-scale=1, user-scalable=no")
+    block title
+      title My HomePage2
+    link(rel="stylesheet", href="app.css")
+  body
+    block url
+    header.header
+      h1.header__title FrontEnd Workflow
+      nav.header__nav
+        ul
+          li
+            a(href="index.html" class={active: currentUrl == '/index.html'}) Typography
+          li
+            a(href="forms.html" class={active: currentUrl == '/forms.html'}) Forms
+          li
+            a(href="about.html" class={active: currentUrl == '/about.html'}) About
+
+    block content
+      article
+        h1 Home Page
+        p  Lorem ipsum dolor sit amet, consectetur adipisicing elit. Porro vero pariatur nesciunt, accusamus voluptas consectetur, nam natus quae iure quam optio blanditiis architecto. Nemo natus odit animi dignissimos culpa labore!

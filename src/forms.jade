@@ -1,0 +1,16 @@
+extends ./base/layout
+
+block title
+  title Forms
+
+block url
+  - var currentUrl = '/forms.html'
+
+
+block content
+  form(action="")
+    label(for="email") Email
+    input(type="text" placeholder="Email" id="email")
+    label(for="password") Password
+    input(type="password" placeholder="Password" id="password")
+    input(type="submit" value="Login")
