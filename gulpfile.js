@@ -5,6 +5,7 @@ var nib = require('nib');
 var typographic = require('typographic');
 var browserSync = require('browser-sync').create();
 var babel = require('gulp-babel');
+var autoprefixer = require('gulp-autoprefixer');
 
 // Static server
 gulp.task('browser-sync', function () {
@@ -32,6 +33,10 @@ return gulp.src('src/app.styl')
   .pipe(stylus({
     use: []
   }))
+  pipe(autoprefixer({
+    browsers: ['last 2 versions'],
+    cascade: false
+  }))
   .pipe(gulp.dest('public'))
   .pipe(browserSync.stream());
 });
@@ -52,3 +57,4 @@ gulp.task('watch', function() {
 });
 
 gulp.task('default', ['babel', 'jade', 'styles', 'browser-sync', 'watch']);
+gulp.task('build', ['babel', 'jade', 'styles'])
